@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Justin Jacobs - I'm gonna become ROBON-GAR X!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link href="main.css" rel="stylesheet" type="text/css" title="main"/>
+<script type='text/javascript' src='js/smooth.pack.js'></script>
+<link rel="stylesheet" type="text/css" href="js/sb/shadowbox.css">
+<script type="text/javascript" src="js/sb/shadowbox.js"></script>
+<script type="text/javascript">
+Shadowbox.init();
+</script>
+</head>
+
+<body>
+<div class="main">
+<a name="top"> </a>
+<h1>Justin Jacobs</h1>
+<div class="subtitle">I'm gonna become ROBON-GAR X!</div>
+<div class="nav">
+<a href="#">^</a>
+<a href="#about">About Me</a>
+<a href="#espada">Espada</a>
+<a href="#script-news">Newsbeuter Notify Script</a>
+<a href="#script-imgdl">Image Download Script</a>
+<a href="#vectors">Vectors</a>
+</div>
+
+<a name="about"> </a>
+<div class="section">
+<h2>About Me</h2>
+<p>Oh hi, my name is Justin. This page is for showcasing my various programming projects and bash scripts. Although, you should check out my <a href="https://github.com/dorkster">Github</a> page for a more complete overview of my programming stuff.</p>
+<p>Also, I like Japanese anime and manga. If you're interested, I keep track of the anime I've watched on <a href="http://myanimelist.net/animelist/dorkster">MyAnimeList</a>.</p>
+<div class="toplink"><a href="#top">Back to top</a></div>
+</div>
+
+<a name="espada"> </a>
+<div class="section">
+<h2>Espada</h2>
+<a href="img/espada-00.png" rel="shadowbox[espada]"><img src="img/s/espada-00.png"/></a>
+<a href="img/espada-01.png" rel="shadowbox[espada]"><img src="img/s/espada-01.png"/></a>
+<p>This is a simple space shooter that I made with C and SDL. It's not complete yet, but it's certainly playable. You can grab the source code <a href="https://github.com/dorkster/espada">here</a>. You'll need SDL, SDL_image, SDL_ttf, and SDL_mixer to compile it.</p>
+<p>Controls:<br/>
+Arrow keys or WASD = Movement<br/>
+Space or Right Control = Fire<br/>
+Enter = Continue on Game Over<br/>
+Escape = Quit</p>
+<div class="toplink"><a href="#top">Back to top</a></div>
+</div>
+
+<a name="script-news"> </a>
+<div class="section">
+<h2>Newsbeuter Notify Script</h2>
+<p>This is a short script that reloads <a href="http://www.newsbeuter.org/">newsbeuter</a>, and then displays a desktop notification (using notify-send) if there are unread articles. I have this set to run every 10 minutes in my crontab.</p>
+<div class="code">#!/bin/bash
+if [ -s ~/.newsbeuter/urls ]; then
+newsbeuter -x reload
+query=$(newsbeuter -x print-unread | grep -w "unread articles")
+if echo $query | grep -wq "0 unread articles"; then
+    echo "No new articles."
+    exit
+else
+    echo "New articles found"
+    DISPLAY=:0.0 XAUTHORITY=~/.Xauthority \
+    notify-send "Newsbeuter" "$query" -i liferea
+fi
+fi</div>
+<div class="toplink"><a href="#top">Back to top</a></div>
+</div>
+
+<a name="script-imgdl"> </a>
+<div class="section">
+<h2>Image Download Script</h2>
+<p>This script will download a web page (using lynx) and save all of the linked images. Great for imageboards.</p>
+<div class="code">#!/bin/bash
+
+savedir=~/Scripts/downloaded_images
+
+if [ $# -lt 1 ]
+then
+    echo "Error: No arguments given."
+    exit 1
+fi
+
+if ! echo $1 | grep "^http://"
+then
+    echo "Error: Argument was not a url."
+    exit 1
+fi
+
+url=$1
+
+mkdir -p $savedir
+cd $savedir
+
+lynx --dump $url >> urls.txt
+cat urls.txt | awk '/http/{print $2}' | grep png >> images.txt
+cat urls.txt | awk '/http/{print $2}' | grep jpg >> images.txt
+cat urls.txt | awk '/http/{print $2}' | grep gif >> images.txt
+
+for i in $(cat images.txt); do wget -nc -nv $i; done
+
+rm ./images.txt
+rm ./urls.txt
+rm -f ./*.html*
+
+echo "Scrape Completed."
+
+exit 0</div>
+<div class="toplink"><a href="#top">Back to top</a></div>
+</div>
+
+<a name="vectors"> </a>
+<div class="section">
+<h2>Vectors</h2>
+<p>These are just some anime-related vector traces I've done in Inkscape.</p>
+<a href="img/vector-kuwahara.png" rel="shadowbox[vectors]"><img src="img/s/vector-kuwahara.png"/></a>
+<a href="img/vector-sakurai.png" rel="shadowbox[vectors]"><img src="img/s/vector-sakurai.png"/></a>
+<a href="img/vector-suzu.png" rel="shadowbox[vectors]"><img src="img/s/vector-suzu.png"/></a>
+<div class="toplink"><a href="#top">Back to top</a></div>
+</div>
+
+<div class="footer">
+This site and its content are copyleft by Justin Jacobs.<br/>
+This page uses valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS 2.1</a> and <a href="http://validator.w3.org/check?uri=referer">XHTML 1.0 Strict</a>.<br/>
+Best viewed printed out, photographed, and pasted into a Microsoft Word file.
+</div>
+</div>
+</body>
+
+</html>
