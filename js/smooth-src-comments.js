@@ -54,10 +54,7 @@ Scroller = {
 		h=document.body.scrollHeight;
 		a = Scroller.scrollTop()
 		if(d>a)
-			if(h-d>i)
-				a+=Math.ceil((d-a)/Scroller.speed)
-			else
-				a+=Math.ceil((d-a-(h-d))/Scroller.speed)
+            a+=Math.ceil((d-a)/Scroller.speed)
 		else
 			a = a+(d-a)/Scroller.speed;
 		window.scrollTo(0,a)
