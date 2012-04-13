@@ -2,9 +2,8 @@
 
 body
 {
-/*background: #525259 url('nori.jpg') top right no-repeat;*/
-background: #1a1a1a;
-color:#dcdccc;
+background: #dfdfdf;
+color:#000000;
 font-family: DejaVu Sans, sans;
 font-size: 10pt;
 vertical-align:text-bottom;
@@ -12,38 +11,69 @@ vertical-align:text-bottom;
 
 .main
 {
-background: #2b2b2b;
-width: 550px;
 margin-left: 0;
 margin-right: auto;
+max-width: 50em;
 }
 
-h1 {background: #506070; color: #dcdccc; padding: 10px; height: 40px;}
-h2 {font-size: 12pt; text-align: right; margin-bottom: 1em;}
-p {margin-bottom: 1em; }
-ul {margin-left: 2em; }
-a {color: #94bff3; font-weight: bold; text-decoration:underline;}
-a:hover {text-decoration:none;}
-.nav { background: #2b2b2b; border-top: #506070 80px solid; padding: 0; position: fixed; top: 0; left: 550px; height: 100%;}
-.nav a { display: block; padding: .5em .5em .5em .5em; color: #dcdccc; font-style: normal; text-decoration: none; }
-.nav a:hover { background: #506070; color: #fff; }
+h1
+{
+background: #2b2b2b;
+color: #dcdccc;
+padding: 10px;
+}
+
+h2
+{
+font-size: 12pt;
+text-align: right;
+margin-bottom: 1em;
+}
+
+p
+{
+margin-bottom: 1em;
+}
+
+ul
+{
+margin-left: 2em;
+}
+
+a
+{
+color: #5a6780;
+text-decoration:underline;
+}
+
+a:hover
+{
+text-decoration:none;
+}
+
+.nav
+{
+background: #bfbfbf;
+padding:.5em;
+}
+
+.nav a
+{
+margin-right: 1em;
+}
 
 .subtitle
 {
-background: #506070;
-color: #dcdccc;
-text-align: right;
+background: #2b2b2b;
+color: #bfbfbf;
 font-size: .8em;
-font-style: oblique;
-padding: 0 10px 0 10px;
-height: 20px;
+padding: 0 10px 2em 10px;
 }
 
 .section
 {
-background: #333;
 padding: 1em;
-margin: 2em 1em 2em 1em;
+margin: 0em 1em 2em 1em;
 }
 
 .toplink
@@ -53,7 +83,7 @@ text-align: right;
 
 .code
 {
-background: #222;
+background: #bfbfbf;
 margin-bottom: 1em;
 padding: 1em;
 font-family: DejaVu Sans Mono, monospace;
