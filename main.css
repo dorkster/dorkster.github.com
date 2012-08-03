@@ -42,13 +42,19 @@ margin-left: 2em;
 
 a
 {
-color: #5a6780;
+color: #1e2561;
 text-decoration:underline;
 }
 
 a:hover
 {
+color: #000;
 text-decoration:none;
+}
+
+a img
+{
+border: 1px solid;
 }
 
 .nav
