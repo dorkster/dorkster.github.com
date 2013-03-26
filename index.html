@@ -2,131 +2,66 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-<head>
-<title>Justin Jacobs - Fun things are fun!</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<link href="main.css" rel="stylesheet" type="text/css" title="main"/>
-</head>
+    <head>
+        <title>Justin Jacobs - Fun things are fun!</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="main.css" rel="stylesheet" type="text/css" title="main"/>
+    </head>
 
-<body>
+    <body>
 
-<h1>Justin Jacobs</h1>
-<div class="subtitle">Fun things are fun!</div>
+        <div class="main">
+        <div class="about">
+            <img src="img/justin.jpg" alt="me" class="myphoto"/>
+            <h1>Justin Jacobs</h1>
+            I'm a computer programmer/hobbyist from Massachusetts, USA. I like to program games, and I primarily develop them under GNU/Linux. This page serves as a summary of my work, all of which is licensed under some form of copyleft license.
+            <div class="social-icons">
+                <a href="http://github.com/dorkster"><img src="img/social/github_16.png" alt="github"/></a>
+                <a href="http://twitter.com/jajdorkster"><img src="img/social/twitter_16.png" alt="twitter"/></a>
+                <a href="http://youtube.com/user/jajdorkster"><img src="img/social/youtube_16.png" alt="youtube"/></a>
+                <a href="http://steamcommunity.com/id/dorkster"><img src="img/social/steam_16.png" alt="steam"/></a>
+                <a href="http://reddit.com/user/dorksterr"><img src="img/social/reddit_16.png" alt="reddit"/></a>
+                <a href="http://opengameart.org/users/dorkster"><img src="img/social/opengameart_16.png" alt="opengameart"/></a>
+                <a href="mailto:jajdorkster@gmail.com"><img src="img/social/email_16.png" alt="email"/></a>
+            </div>
+        </div>
 
-<div class="nav">
-<a href="#about">About Me</a>
-<a href="#feedreader">Feedreader</a>
-<a href="#block-breaker">Block Breaker</a>
-<a href="#espada">Espada</a>
-<a href="#desktop-theme">Desktop Theme</a>
-<a href="#scripts">Scripts</a>
-<a href="#vectors">Vectors</a>
-</div>
+            <a href="http://flarerpg.org/" class="project">
+                <img src="img/flare.png" alt="flare"/>
+                <h2>Flare</h2>
+                Clint Bellanger's Flare is a fantastic free-software action RPG, similar to the Diablo series. I've been helping with development since March of 2012. Most of my programming time is now spent on Flare, be it small bugfixes or brand new features. It's nice to be able to work on an ambitious project that still has a relatively simplistic codebase.
+            </a>
+            <a href="http://github.com/dorkster/woods" class="project">
+                <img src="img/woods.png" alt="woods"/>
+                <h2>Woods</h2>
+                My February 2013 OneGameAMonth project. The goal of the game is to balance on a log to get across the river. Not really a complex game, but I've heard it's nice to play on a laptop with an accelerometer.
+            </a>
+            <a href="http://github.com/dorkster/freeblocks" class="project">
+                <img src="img/freeblocks.png" alt="freeblocks"/>
+                <h2>FreeBlocks</h2>
+                My January 2013 OneGameAMonth project. I had always wanted to make a puzzle game like Tetris Attack. I'm pleased with how this one turned out. It's not as complete as Tetris Attack, but it's still a lot of fun to play.
+            </a>
+            <a href="http://github.com/dorkster/feedreader" class="project">
+                <img src="img/feedreader.png" alt="feedreader"/>
+                <h2>Feedreader</h2>
+                This is a really simple RSS reader made with GTK2 that sits in the system tray. Most of the RSS readers I used before were either bloated GUIs or CLI only. I wanted to make a lightweight GUI program to fit in between those two extremes.
+            </a>
+            <a href="http://github.com/dorkster/block-breaker" class="project">
+                <img src="img/block-breaker.png" alt="block breaker"/>
+                <h2>Block Breaker</h2>
+                An Arkanoid/Breakout clone that I made to learn about drawing primitive shapes with the SDL_gfx package. The ball physics are not very good, but I didn't spend much time working on this.
+            </a>
+            <a href="http://github.com/dorkster/espada" class="project">
+                <img src="img/espada.png" alt="espada"/>
+                <h2>Espada</h2>
+                This was my first true game made with C and SDL. While not a terrible game, I made a lot of mistakes back then. I plan to rewrite and redesign this game as one of my 2013 OneGameAMonth projects.
+            </a>
+        </div>
 
-<div class="main">
-
-<a name="about"></a>
-<div class="section">
-<h2>About Me</h2>
-<p>Oh hi, my name is Justin. I enjoy programming in C and C++, and have lately been spending my time contributing to Clint Bellanger's action-rpg, <a href="http://flarerpg.org">Flare</a>. I've also done some stuff for the Flare-based LPC entry, <a href="https://github.com/makrohn/polymorphable">Laurelia's Polymorphable Citizens</a>.</p>
-<p>Aside from those projects, this page is for showcasing small programs I've written (all of which are hosted on my Github), along with some bash scripts.</p>
-<p>Also, I like Japanese anime and manga. If you're interested, I keep track of the anime I've watched on <a href="http://myanimelist.net/animelist/dorkster">MyAnimeList</a>.</p>
-<div class="toplink"><a href="#top">Back to top</a></div>
-</div>
-<hr/>
-
-<a name="feedreader"> </a>
-<div class="section">
-<h2>Feedreader</h2>
-<a href="img/feedreader-00.png"><img src="img/s/feedreader-00.png" alt="Expanded menus"/></a>
-<p>This is a really simple RSS feed reader made with C and GTK2 that sits in the system tray. Clicking on an article will open it with xdg-open (this can be changed in util.h).</p>
-<p><a href="https://github.com/dorkster/feedreader">Github page</a></p>
-<div class="toplink"><a href="#top">Back to top</a></div>
-</div>
-<hr/>
-
-<a name="block-breaker"> </a>
-<div class="section">
-<h2>Block Breaker</h2>
-<a href="img/block-00.png"><img src="img/s/block-00.png" alt="Gameplay"/></a>
-<p>A breakout clone that I made with C and SDL. I wanted to try out the primitives in SDL_gfx, and this made a nice test project for that purpose.</p>
-<p><a href="https://github.com/dorkster/block-breaker">Github page</a></p>
-<p>
-Controls (ingame):<br/>
-Arrow keys = Move paddle left/right<br/>
-Space = Launch ball<br/>
-ESC = Quit
-</p>
-<div class="toplink"><a href="#top">Back to top</a></div>
-</div>
-<hr/>
-
-<a name="espada"> </a>
-<div class="section">
-<h2>Espada</h2>
-<a href="img/espada-00.png"><img src="img/s/espada-00.png" alt="Title Screen"/></a>
-<a href="img/espada-01.png"><img src="img/s/espada-01.png" alt="Gameplay"/></a>
-<p>This is a simple space shooter that I made with C and SDL. It's not complete yet, but it's certainly playable.</p>
-<p><a href="https://github.com/dorkster/espada">Github page</a></p>
-<p>Controls (main menu):<br/>
-Arrow keys = Move cursor vertically / Increase &amp; decrease settings<br/>
-Z = Accept selection<br/>
-</p>
-<p>
-Controls (ingame):<br/>
-Arrow keys = Movement<br/>
-Z = Fire<br/>
-P or ESC = Pause
-</p>
-<div class="toplink"><a href="#top">Back to top</a></div>
-</div>
-<hr/>
-
-<a name="desktop-theme"></a>
-<div class="section">
-<h2>Desktop Theme</h2>
-<a href="img/desktop-00.png"><img src="img/s/desktop-00.png" alt="Terminal colors and GTK2 theme"/></a>
-<a href="img/desktop-01.png"><img src="img/s/desktop-01.png" alt="Empty desktop"/></a>
-<p>This is a set of themes that I use for my systems. The icons are <a href="http://gnome-look.org/content/show.php/Any+Color+You+Like?content=102435">AnyColorYouLike</a>.</p>
-<p><a href="theme.tar.gz">Download</a> the theme, which includes:</p>
-<ul>
-<li>GTK2 theme based on Mist)</li>
-<li>Openbox theme</li>
-<li>Tint2 config</li>
-<li>Conky config</li>
-<li>Xdefaults (for terminal colors)</li>
-<li>VIM color scheme (used with terminal colors</li>
-<li>Icon for Deadbeef (compatible with AnyColorYouLike)</li>
-</ul>
-<div class="toplink"><a href="#top">Back to top</a></div>
-</div>
-<hr/>
-
-<a name="scripts"> </a>
-<div class="section">
-<h2>Scripts</h2>
-<p><a href="scripts/rss-notify.sh.gz">Newsbeuter Notifier</a> - This is a short script that reloads <a href="http://www.newsbeuter.org/">newsbeuter</a>, and then displays a desktop notification (using notify-send) if there are unread articles. I have this set to run every 10 minutes in my crontab.</p>
-<p><a href="scripts/imagedownloader.sh.gz">Image Downloader</a> - This script will download a web page and save all of the linked images. Great for imageboards.</p>
-<div class="toplink"><a href="#top">Back to top</a></div>
-</div>
-<hr/>
-
-<a name="vectors"> </a>
-<div class="section">
-<h2>Vectors</h2>
-<p>These are just some anime-related vector traces I've done in Inkscape.</p>
-<a href="img/vector-kuwahara.png"><img src="img/s/vector-kuwahara.png" alt="Kuwahara"/></a>
-<a href="img/vector-sakurai.png"><img src="img/s/vector-sakurai.png" alt="Sakurai"/></a>
-<a href="img/vector-suzu.png"><img src="img/s/vector-suzu.png" alt="Suzu"/></a>
-<div class="toplink"><a href="#top">Back to top</a></div>
-</div>
-
-<div class="footer">
-This site and its content are copyleft by Justin Jacobs.<br/>
-This page uses valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS 2.1</a> and <a href="http://validator.w3.org/check?uri=referer">XHTML 1.0 Strict</a>.<br/>
-Best viewed printed out, photographed, and pasted into a Microsoft Word file.
-</div>
-</div>
-</body>
+        <div class="footer">
+            ©2013 Justin Jacobs.<br/>
+            This page uses valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS 2.1</a> and <a href="http://validator.w3.org/check?uri=referer">XHTML 1.0 Strict</a>.
+        </div>
+    </body>
 
 </html>
