@@ -51,6 +51,12 @@ a:hover {
     text-decoration: none;
 }
 
+.project-name {
+    font-size: 14pt;
+    font-weight: bold;
+    display:block;
+}
+
 .project:hover {
     background: #ececec;
     color: #3C6F69;
