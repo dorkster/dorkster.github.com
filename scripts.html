@@ -36,8 +36,6 @@ fi</code>
 # Copies an mp3 file to a location based on tags
 # arguments (in Deadbeef title format): %F %B %b %@disc@ %n %t
 
-# zenity_cmd="zenity --progress --title=\"Copying files\" --text=\"Copying files ...\" --auto-close"
-
 # function to remove invalid characters
 clean() {
     echo "$1" | sed 's/\"/\\\"/g' | sed 's/\//_/g'
