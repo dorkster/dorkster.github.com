@@ -3,19 +3,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <title>dorkster - Shell Scripts</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link href="main.css" rel="stylesheet" type="text/css" title="main"/>
+<title>dorkster - Shell Scripts</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link href="main.css" rel="stylesheet" type="text/css" title="main"/>
 </head>
 
 <body>
-    <h1>dorkster</h1>
-    <hr/>
-    <h2>Shell Scripts</h2>
-    <h3>Edit screencast audio</h3>
-    <p>This lets me take an ogv screencast that I've recorded with recordMyDesktop and edit the audio track with Audacity. This way, I can perform amplification and noise removal before uploading the final video.</p>
-    <code>#!/bin/bash
 
+<h1>dorkster</h1>
+<hr/>
+
+<h2>Shell Scripts</h2>
+
+<h3>Edit screencast audio</h3>
+<p>This lets me take an ogv screencast that I've recorded with recordMyDesktop and edit the audio track with Audacity. This way, I can perform amplification and noise removal before uploading the final video.</p>
+
+<pre><code>#!/bin/bash
 # Edit and remux audio from a screencast
 # $1 is the original video filename
 
@@ -28,11 +31,12 @@ if [ -f "$1" ]; then
         rm audio.wav
     fi
     rm audio.ogg
-fi</code>
-    <h3>Copy music to library for Deadbeef</h3>
-    <p>The Deadbeef music player doesn't provide a way to copy files natively. This could be because file management is out of scope for a music player, but I want to take advantage of the tags that Deadbeef can read when sorting my music. So I hacked this script together to copy files to my music directory.</p>
-    <code>#!/bin/bash
+fi</code></pre>
 
+<h3>Copy music to library for Deadbeef</h3>
+<p>The Deadbeef music player doesn't provide a way to copy files natively. This could be because file management is out of scope for a music player, but I want to take advantage of the tags that Deadbeef can read when sorting my music. So I hacked this script together to copy files to my music directory.</p>
+
+<pre><code>#!/bin/bash
 # Copies an mp3 file to a location based on tags
 # arguments (in Deadbeef title format): %F %B %b %@disc@ %n %t
 
@@ -57,13 +61,16 @@ else
 fi
 
 mkdir -p "$out_path"
-cp "$1" "$out_path/$out_filename" | zenity --progress --title="Copying Files" --text "$(echo "$out_path/$out_filename" | sed 's/&amp;/&amp;amp;/g')" --auto-close</code>
-    <p><a href="index.html">Back to main page</a></p>
-    <hr/>
-    <p>
-        ©2013-2014 Justin Jacobs.<br/>
-        This page uses valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS 2.1</a> and <a href="http://validator.w3.org/check?uri=referer">XHTML 1.0 Strict</a>.
-    </p>
+cp "$1" "$out_path/$out_filename" | zenity --progress --title="Copying Files" --text "$(echo "$out_path/$out_filename" | sed 's/&amp;/&amp;amp;/g')" --auto-close</code></pre>
+
+<p><a href="index.html">Back to main page</a></p>
+
+<hr/>
+<p>
+©2013-2014 Justin Jacobs.<br/>
+This page uses valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS 2.1</a> and <a href="http://validator.w3.org/check?uri=referer">XHTML 1.0 Strict</a>.
+</p>
+
 </body>
 
 </html>
