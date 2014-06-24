@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-<title>dorkster - Blog</title>
+<title>dorkster - 2014/06/24 15:43:54</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link href="main.css" rel="stylesheet" type="text/css" title="main"/>
 </head>
@@ -29,38 +29,6 @@
 <p>Thanks to <a href="https://code.google.com/p/ffmpegthumbnailer/">ffmpegthumbnailer</a>, implementing the feature was pretty easy. All I had to do was add some code to determine if a file is a video, and add the relavant ffmpegthumbnailer bits to the existing thumbnailing code. Although, I got a bit tripped up when I forgot about the filesize limit that SpaceFM uses for thumbnails (maximum of 32MB). Since most videos are over 32MB, thumbnail generation was being skipped. After disabling the filesize limit for video files when thumbnailing, everything just worked.</p>
 
 <p>I haven't submitted a pull request to the SpaceFM project yet, because my code makes ffmpegthumbnailer a required dependency of SpaceFM. Ideally, having video thumbnail support should be optional at compile time, but I've been too lazy to set that up properly. If you want to try the patch for yourself, pull in <a href="https://github.com/dorkster/spacefm/tree/video-thumbnails">my branch</a>.</p>
-<p><a href="blog_2014-06-24_15-43-54.html">Permalink</a></p>
-<h2>2014/06/24 03:36:44</h2>
-
-<p>So, I've been wanting to put up some sort of blog here for a while now. Since this is hosted on Github, a static blog was appropriate. There's plenty of static blog generators out there (Jekyll probably being the most popular), but none of them appealed to me. Most of them are written in a slow, interpreted language like Ruby, or they are overkill for my needs.</p>
-
-<p>Since *nix systems are already great at text processing, I decided to just roll my own using Markdown and some Bash scripts. What I came up with consists of three scripts:</p>
-
-<ol>
-<li><a href="markdown/scripts/generate_static.sh">A script to generate non-blog pages</a></li>
-<li><a href="markdown/scripts/generate_blog.sh">A script to generate blog pages</a></li>
-<li>A script to create a new blog post; aliased to "blog" in my shell</li>
-</ol>
-
-<p>(No link to script #3, so I'll show it here):</p>
-
-<pre><code>#!/bin/bash
-
-BLOGPATH="$HOME/Projects/dorkster.github.com/markdown/blog"
-FILENAME="$(date -u +"%Y-%m-%d_%H-%M-%S").md"
-PAGETITLE="## $(date -u +"%Y/%m/%d %H:%M:%S")"
-
-mkdir -p $BLOGPATH
-echo "$PAGETITLE" &gt; $BLOGPATH/$FILENAME
-echo &gt;&gt; $BLOGPATH/$FILENAME
-
-vim $BLOGPATH/$FILENAME
-</code></pre>
-
-<p>It took a bit of time for me to put all this together, but it seems to work perfectly. I might make some later tweaks and additions (like an RSS feed), but this should be satisfactory for now.</p>
-<p><a href="blog_2014-06-24_03-36-44.html">Permalink</a></p>
-<p>
-</p>
 
 </div>
 
