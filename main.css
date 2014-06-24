@@ -3,9 +3,8 @@
 body {
     font-family: DejaVu Sans, Verdana, sans;
     font-size: 10pt;
-    background: #eee;
+    background: #fff;
     color: #444;
-    max-width: 64em;
 }
 
 p {
@@ -15,11 +14,10 @@ p {
     margin-right: 1em;
 }
 
-ul {
-    list-style: square;
+ul, ol{
     margin-top: 1em;
     margin-bottom: 2em;
-    margin-left: 2em;
+    margin-left: 4em;
     margin-right: 2em;
 }
 
@@ -27,8 +25,12 @@ li {
     margin-bottom: 0.5em;
 }
 
+ul {
+    list-style: square;
+}
+
 code {
-    background: #e0e0e0;
+    background: #f0f0f0;
     display: block;
     overflow: auto;
     margin-top: 0.5em;
@@ -36,14 +38,18 @@ code {
     margin-left: 1em;
     margin-right: 1em;
     padding: 1em;
+    white-space: pre;
 }
 
 h1 {
-    font-size: 18pt;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: 0.25em;
-    margin-right: 0.25em;
+    font-size: 12px;
+    height: 32px;
+    padding-right: 8px;
+    background: #000;
+    color: #fff;
+    text-align: right;
+    vertical-align: middle;
+    line-height: 32px;
 }
 
 h2 {
@@ -77,3 +83,31 @@ a:visited {
     color: #825c99;
 }
 
+.navigation {
+    list-style: none;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    vertical-align: middle;
+    line-height: 32px; 
+}
+
+.navigation li {
+    display: inline;
+}
+
+.navigation a {
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    background: #825C99;
+}
+
+.content {
+    max-width: 50em;
+}
