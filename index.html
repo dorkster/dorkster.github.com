@@ -70,15 +70,22 @@
 
 <pre><code>#!/bin/bash
 
-BLOGPATH="$HOME/Projects/dorkster.github.com/markdown/blog"
-FILENAME="$(date -u +"%Y-%m-%d_%H-%M-%S").md"
-PAGETITLE="## $(date -u +"%Y/%m/%d %H:%M:%S")"
+BLOGPATH="$HOME/Projects/dorkster.github.com"
+BLOGDATE="$(date -u +"%Y/%m/%d %H:%M:%S")"
+BLOGFILE="$(echo $BLOGDATE | sed -e 's/\//-/g' -e 's/:/-/g' -e 's/ /_/g').md"
+PAGETITLE="## $BLOGDATE"
 
-mkdir -p $BLOGPATH
-echo "$PAGETITLE" &gt; $BLOGPATH/$FILENAME
-echo &gt;&gt; $BLOGPATH/$FILENAME
+vim /tmp/$BLOGFILE
 
-vim $BLOGPATH/$FILENAME
+if [ -r "/tmp/$BLOGFILE" ] &amp;&amp; [ -d "$BLOGPATH/.git/" ]; then
+    echo -e "$PAGETITLE\\n" | cat - /tmp/$BLOGFILE &gt; "$BLOGPATH/markdown/blog/$BLOGFILE"
+    rm /tmp/$BLOGFILE
+
+    cd "$BLOGPATH"
+    sh markdown/scripts/generate_blog.sh
+    git add index.html blog*.html markdown/ images/
+    git status
+fi
 </code></pre>
 
 <p>It took a bit of time for me to put all this together, but it seems to work perfectly. I might make some later tweaks and additions (like an RSS feed), but this should be satisfactory for now.</p>
