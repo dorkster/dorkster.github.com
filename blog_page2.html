@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>dorkster - Blog</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link href="main.css" rel="stylesheet" type="text/css" title="main"/>
+</head>
+
+<body>
+
+<h1>dorkster</h1>
+<ul class="navigation">
+    <li><a href="index.html">Blog</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="about.html">About</a></li>
+</ul>
+<hr/>
+
+<div class="content">
+
+<div class="blogpost">
+<h2>2014/06/24 03:36:44</h2>
+
+<p>So, I've been wanting to put up some sort of blog here for a while now. Since this is hosted on Github, a static blog was appropriate. There's plenty of static blog generators out there (Jekyll probably being the most popular), but none of them appealed to me. Most of them are written in a slow, interpreted language like Ruby, or they are overkill for my needs.</p>
+
+<p>Since *nix systems are already great at text processing, I decided to just roll my own using Markdown and some Bash scripts. What I came up with consists of three scripts:</p>
+
+<ol>
+<li><a href="markdown/scripts/generate_static.sh">A script to generate non-blog pages</a></li>
+<li><a href="markdown/scripts/generate_blog.sh">A script to generate blog pages</a></li>
+<li>A script to create a new blog post; aliased to "blog" in my shell</li>
+</ol>
+
+<p>(No link to script #3, so I'll show it here):</p>
+
+<pre><code>#!/bin/bash
+
+BLOGPATH="$HOME/Projects/dorkster.github.com"
+BLOGDATE="$(date -u +"%Y/%m/%d %H:%M:%S")"
+BLOGFILE="$(echo $BLOGDATE | sed -e 's/\//-/g' -e 's/:/-/g' -e 's/ /_/g').md"
+PAGETITLE="## $BLOGDATE"
+
+vim /tmp/$BLOGFILE
+
+if [ -r "/tmp/$BLOGFILE" ] &amp;&amp; [ -d "$BLOGPATH/.git/" ]; then
+    echo -e "$PAGETITLE\\n" | cat - /tmp/$BLOGFILE &gt; "$BLOGPATH/markdown/blog/$BLOGFILE"
+    rm /tmp/$BLOGFILE
+
+    cd "$BLOGPATH"
+    sh markdown/scripts/generate_blog.sh
+    git add index.html blog*.html markdown/ images/
+    git status
+fi
+</code></pre>
+
+<p>It took a bit of time for me to put all this together, but it seems to work perfectly. I might make some later tweaks and additions (like an RSS feed), but this should be satisfactory for now.</p>
+<p><a href="blog_2014-06-24_03-36-44.html">Permalink</a></p>
+</div>
+<p>
+<a href="blog_page1.html">Newer entries</a>
+</p>
+
+</div>
+
+<hr/>
+<p>
+©2013-2014 Justin Jacobs.<br/>
+This page uses valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS 2.1</a> and <a href="http://validator.w3.org/check?uri=referer">XHTML 1.0 Strict</a>.
+</p>
+
+</body>
+
+</html>
