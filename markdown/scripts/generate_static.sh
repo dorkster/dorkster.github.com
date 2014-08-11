@@ -10,6 +10,8 @@ for i in *.md; do
     HTMLFILE="../$(basename $i ".md").html"
     echo "Generating $HTMLFILE"
     cat html_template/header.txt | sed -e "s/PAGETITLE/$PAGETITLE/g" > "$HTMLFILE"
+    echo "<div class=\"static\">" >> "$HTMLFILE"
     markdown $i >> "$HTMLFILE"
+    echo "</div>" >> "$HTMLFILE"
     cat html_template/footer.txt >> "$HTMLFILE"
 done

@@ -27,11 +27,15 @@ for i in $(ls -1 blog/*.md | sort -r); do
     HTMLFILE="blog_$(basename $i ".md").html"
     echo "Generating ../$HTMLFILE"
     cat html_template/header.txt | sed -e "s/PAGETITLE/$PAGETITLE/g" > "../$HTMLFILE"
+    echo "<div class=\"blogpost\">" >> "../$HTMLFILE"
     markdown $i >> "../$HTMLFILE"
+    echo "</div>" >> "../$HTMLFILE"
     cat html_template/footer.txt >> "../$HTMLFILE"
 
+    echo "<div class=\"blogpost\">" >> "../$PAGERFILE"
     markdown $i >> "../$PAGERFILE"
     echo "<p><a href=\"$HTMLFILE\">Permalink</a></p>" >> "../$PAGERFILE"
+    echo "</div>" >> "../$PAGERFILE"
 
     if [ $(expr $BLOGINDEX % $BLOGMAXINDEX) -eq 0 ] || [ $BLOGINDEX -eq $BLOGTOTAL ]; then
         echo "<p>" >> "../$PAGERFILE"
