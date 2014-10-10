@@ -21,6 +21,22 @@
 <div class="content">
 
 <div class="blogpost">
+<h2>2014/10/10 14:53:17</h2>
+
+<p>The past month or so has been pretty good for Flare development. Many crashes, memory leaks, and bugs were reported and fixed. Many of the bugs revolved around poor handling of items, which was causing items to disappear in some cases. The crashes were mostly just us not respecting array bounds, and were introduced fairly recently. The memory leaks, on the other hand, turned out to be long-standing problems. Who knew that every instance of WidgetLabel (most places where there is text) was leaking memory?</p>
+
+<p>The other major memory leak was known for a long time, so I feel like going into a bit of detail. Map events have the ability to cast powers (e.g. the trapped chests in the Brothers' Lair). In order to cast these powers, we were creating a StatBlock that was attached to the event. The problem was that the event could be deleted while the power was still active, resulting in the StatBlock leaking. The solution was to determine ahead of time which events will need StatBlocks, and allocate them in an array attached to the Map class itself.</p>
+
+<p>It hasn't all been scrambling to fix stuff, though. We've also had time to work on some new features. The loot system got a bit of reworking, so it is now possible to define loot tables in separate files instead of having to define loot inline. This is handy because we can re-use loot tables in multiple places. The best part is that we can mix these loot files with inline loot definitions to add lots of variety.</p>
+
+<p>Also related to loot, we've added the ability for powers to drop loot. One of the more interesting ideas that was tossed around was the idea of a theif class that can punch the gold out of enemeies. Clint also pointed out that powers that require an item and drop a different item is a simple version of crafting.</p>
+
+<p>Igor has been very helpful in continuing work on the Android port. A lot of the work here involved re-thinking input to work with touchscreens. Many things we take for granted when using a mouse, like hovering over icons to see tooltips, had to be changed. Our solution for that case was to display tooltips on the first tap, followed by the regular "left-click" action on the second tap. During this whole process, we were even able to improve some things on the mouse/keyboard side of things, like <a href="http://a.pomf.se/ultkao.webm">being able to pick a target for some powers after activating from the action bar</a>.</p>
+
+<p>Finally, we merged the SDL hardware renderer from flare-engine-next into upstream flare-engine. Aside from <a href="https://github.com/dorkster/flare-engine-next/issues/5#issuecomment-58497417">one minor issue</a>, it looks identical to the software renderer. Of course, it is much faster than the software renderer because GPUs are just better equipped for handling graphics (go figure). Since this feature is upstream now, <strong>I hard reset the flare-engine-next repo to upstream</strong>, so please update your forks and local clones approriately.</p>
+<p><a href="blog_2014-10-10_14-53-17.html">Permalink</a></p>
+</div>
+<div class="blogpost">
 <h2>2014/08/11 20:30:41</h2>
 
 <p>In my last post, I mentioned the plan for a developer menu for Flare. I created <a href="https://www.youtube.com/watch?v=ZhLAPOs5pT8&amp;list=UUkvFvU2eOTKylDAZOJkHfRw">an implementation of my idea</a>, but it wasn't very flexible when it came to adding functionality. It also added more than an acceptable amount of code to the MenuManager class (which is already messy). As an alternative, I started working on a <a href="https://www.youtube.com/watch?v=hLlzxaZW8Iw&amp;list=UUkvFvU2eOTKylDAZOJkHfRw">developer console</a>.</p>
@@ -61,14 +77,6 @@
 
 <p><a href="images/coast_cave.jpg"><img src="images/thumb_coast_cave.jpg" alt="coast cave map alpha" title="" /></a></p>
 <p><a href="blog_2014-07-18_21-42-16.html">Permalink</a></p>
-</div>
-<div class="blogpost">
-<h2>2014/07/16 05:59:45</h2>
-
-<p>Engine work for Flare has slowed down a lot, so I decided to start brainstorming some new map ideas. The <a href="https://github.com/clintbellanger/flare-game/wiki/Map-Guide">plan for maps</a> in the Empyrean campaign shows that we plan to have a lot of places to visit. The map I worked on tonight fits in between the goblin camp and the bridge area. It's a coastal area featuring two fisherman's shacks and a short cave (will be another map). Here's a preview of how it looks so far:</p>
-
-<p><a href="images/coast.jpg"><img src="images/thumb_coast.jpg" alt="coast map alpha" title="" /></a></p>
-<p><a href="blog_2014-07-16_05-59-45.html">Permalink</a></p>
 </div>
 <p>
 <a href="blog_page1.html">Older entries</a>

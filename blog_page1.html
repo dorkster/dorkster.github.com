@@ -21,6 +21,14 @@
 <div class="content">
 
 <div class="blogpost">
+<h2>2014/07/16 05:59:45</h2>
+
+<p>Engine work for Flare has slowed down a lot, so I decided to start brainstorming some new map ideas. The <a href="https://github.com/clintbellanger/flare-game/wiki/Map-Guide">plan for maps</a> in the Empyrean campaign shows that we plan to have a lot of places to visit. The map I worked on tonight fits in between the goblin camp and the bridge area. It's a coastal area featuring two fisherman's shacks and a short cave (will be another map). Here's a preview of how it looks so far:</p>
+
+<p><a href="images/coast.jpg"><img src="images/thumb_coast.jpg" alt="coast map alpha" title="" /></a></p>
+<p><a href="blog_2014-07-16_05-59-45.html">Permalink</a></p>
+</div>
+<div class="blogpost">
 <h2>2014/07/11 03:34:54</h2>
 
 <p>Tonight, I hacked together a <a href="https://github.com/clintbellanger/flare-engine/pull/1125">set of features</a> for Flare that I've had on the back burner for a while now. The save system in Flare was hard-coded to automatically save whenever the player moved to a new map, or when they quit the game. The problem with this is that it becomes easy to "cheese" death when the game gets hard by simply closing the window. Maybe that's okay for the game that we'll initally be making, since plain-text save files make cheating easy enough anyway. However, I think making this area flexible is important for creating other games, as save points can be important to the pacing of a game.</p>
@@ -55,18 +63,6 @@
 
 <p>In addition, I finally fixed a bug with WidgetScrollBox. When dragging the knob of a scrollbar attached to a WidgetScrollBox, it was impossible to scroll all the way to the bottom.</p>
 <p><a href="blog_2014-06-26_23-51-01.html">Permalink</a></p>
-</div>
-<div class="blogpost">
-<h2>2014/06/24 15:43:54</h2>
-
-<p><img src="images/spacefm_videothumbs.png" alt="screenshot of SpaceFM using ffmpegthumbnailer" title="" /></p>
-
-<p>About 2 weeks ago, I wrote a patch for <a href="http://ignorantguru.github.io/spacefm/">SpaceFM</a> that adds support for video thumbnails. It was something that I wanted for a while now, and it was already an open issue on SpaceFM's bug tracker.</p>
-
-<p>Thanks to <a href="https://code.google.com/p/ffmpegthumbnailer/">ffmpegthumbnailer</a>, implementing the feature was pretty easy. All I had to do was add some code to determine if a file is a video, and add the relavant ffmpegthumbnailer bits to the existing thumbnailing code. Although, I got a bit tripped up when I forgot about the filesize limit that SpaceFM uses for thumbnails (maximum of 32MB). Since most videos are over 32MB, thumbnail generation was being skipped. After disabling the filesize limit for video files when thumbnailing, everything just worked.</p>
-
-<p>I haven't submitted a pull request to the SpaceFM project yet, because my code makes ffmpegthumbnailer a required dependency of SpaceFM. Ideally, having video thumbnail support should be optional at compile time, but I've been too lazy to set that up properly. If you want to try the patch for yourself, pull in <a href="https://github.com/dorkster/spacefm/tree/video-thumbnails">my branch</a>.</p>
-<p><a href="blog_2014-06-24_15-43-54.html">Permalink</a></p>
 </div>
 <p>
 <a href="index.html">Newer entries</a>

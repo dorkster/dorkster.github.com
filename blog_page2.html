@@ -21,6 +21,18 @@
 <div class="content">
 
 <div class="blogpost">
+<h2>2014/06/24 15:43:54</h2>
+
+<p><img src="images/spacefm_videothumbs.png" alt="screenshot of SpaceFM using ffmpegthumbnailer" title="" /></p>
+
+<p>About 2 weeks ago, I wrote a patch for <a href="http://ignorantguru.github.io/spacefm/">SpaceFM</a> that adds support for video thumbnails. It was something that I wanted for a while now, and it was already an open issue on SpaceFM's bug tracker.</p>
+
+<p>Thanks to <a href="https://code.google.com/p/ffmpegthumbnailer/">ffmpegthumbnailer</a>, implementing the feature was pretty easy. All I had to do was add some code to determine if a file is a video, and add the relavant ffmpegthumbnailer bits to the existing thumbnailing code. Although, I got a bit tripped up when I forgot about the filesize limit that SpaceFM uses for thumbnails (maximum of 32MB). Since most videos are over 32MB, thumbnail generation was being skipped. After disabling the filesize limit for video files when thumbnailing, everything just worked.</p>
+
+<p>I haven't submitted a pull request to the SpaceFM project yet, because my code makes ffmpegthumbnailer a required dependency of SpaceFM. Ideally, having video thumbnail support should be optional at compile time, but I've been too lazy to set that up properly. If you want to try the patch for yourself, pull in <a href="https://github.com/dorkster/spacefm/tree/video-thumbnails">my branch</a>.</p>
+<p><a href="blog_2014-06-24_15-43-54.html">Permalink</a></p>
+</div>
+<div class="blogpost">
 <h2>2014/06/24 03:36:44</h2>
 
 <p>So, I've been wanting to put up some sort of blog here for a while now. Since this is hosted on Github, a static blog was appropriate. There's plenty of static blog generators out there (Jekyll probably being the most popular), but none of them appealed to me. Most of them are written in a slow, interpreted language like Ruby, or they are overkill for my needs.</p>
