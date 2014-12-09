@@ -27,7 +27,7 @@
 
 <p>This past weekend, I participated in my first Ludum Dare. In preparation, I had put together a simple framework of an engine using SDL 2. The framework provided simple things, like easily loading and using static images, animations, and sounds. The jam itself was quite a challenge, but it was also a lot of fun.</p>
 
-<p>The game, entitled "Noman's Dungeon", is up <a href="http://ludumdare.com/compo/ludum-dare-31/?action=preview&amp;uid=44489">here on the Ludum Dare website</a>. I've also put together a time-lapse video of the entire development process, which you can <a href="https://www.youtube.com/watch?v=KXeY-RI3xIU">watch here on Youtube</a>. What I'd like to do now is give a post-mortem on how the whole thing went.</p>
+<p>The game, entitled "Noman's Dungeon", is up <a href="http://ludumdare.com/compo/ludum-dare-31/?action=preview&amp;uid=44489">here on the Ludum Dare website</a>. I've also put together a time-lapse video of the entire development process, which you can <a href="https://www.youtube.com/watch?v=KXeY-RI3xIU">watch here on Youtube</a>. What I'd like to do now is give a postmortem on how the whole thing went.</p>
 
 <p>I initially spent the first hour brainstorming ideas that fit with the "entire game on one screen" theme. After tossing around some ideas like a 1v1 tank battle game and a puzzle/platformer like Solomon's Key, I settled on a turn-based rogue-like. I had thought of such a game in the past, so this felt like a good opportunity to try it out. Here is the outline I ended up with:</p>
 
@@ -67,7 +67,7 @@
 <li>I feel that having the player (and slimes) only move 1 tile per turn doesn't provide a lot of tactical options.</li>
 <li>I could only provide Linux and Windows builds. Although it should be relatively easy to build on Mac OS X, it would have been nice to be able to provide a pre-built package for those people. Something I'd like to do in the future (not for a game jam) is create a web version of the game, so anyone with a modern web browser could play. I've never done any HTML canvas and Javascript in the context of a game, so I'll probably be looking at Clint Bellanger's <a href="http://heroinedusk.com/">Heroine Dusk</a> as a way of learning.</li>
 <li>While not something that's important in the context of a game jam, some of my code's structure is a bit poor. I ended up putting a lot of the game's logic in the MapEngine class, where it didn't really belong. Sorting out that structure is something I want to do before working on a port to another language.</li>
-<li>During the process, I want to make it so that entities "tweened" when moving between positions, but my movement system made that too difficult to implement in a reasonable amount of time.</li>
+<li>During the process, I wanted to make it so that entities "tweened" when moving between positions, but my movement system made that too difficult to implement in a reasonable amount of time.</li>
 </ul>
 
 <p>So where do I go from here? I have a fun little game that's begging for some balancing and some more content. A lot of the things myself and others found to be problems with the game are simply results of having a limited amount of time. I think it's something that I want to continue working on, even though the jam is over. Maybe it will turn into something really cool one day.</p>
