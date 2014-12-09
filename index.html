@@ -21,6 +21,59 @@
 <div class="content">
 
 <div class="blogpost">
+<h2>2014/12/09 10:02:52</h2>
+
+<p><img src="images/nomans_dungeon.png" alt="Noman's Dungeon Screenshot" title="" /></p>
+
+<p>This past weekend, I participated in my first Ludum Dare. In preparation, I had put together a simple framework of an engine using SDL 2. The framework provided simple things, like easily loading and using static images, animations, and sounds. The jam itself was quite a challenge, but it was also a lot of fun.</p>
+
+<p>The game, entitled "Noman's Dungeon", is up <a href="http://ludumdare.com/compo/ludum-dare-31/?action=preview&amp;uid=44489">here on the Ludum Dare website</a>. I've also put together a time-lapse video of the entire development process, which you can <a href="https://www.youtube.com/watch?v=KXeY-RI3xIU">watch here on Youtube</a>. What I'd like to do now is give a post-mortem on how the whole thing went.</p>
+
+<p>I initially spent the first hour brainstorming ideas that fit with the "entire game on one screen" theme. After tossing around some ideas like a 1v1 tank battle game and a puzzle/platformer like Solomon's Key, I settled on a turn-based rogue-like. I had thought of such a game in the past, so this felt like a good opportunity to try it out. Here is the outline I ended up with:</p>
+
+<ul>
+<li>super-simple turn based rpg, srpg combat like Disgaea</li>
+<li>rogue-like; get "orb" at the end and return to the surface; permadeath;</li>
+<li>some rooms have enemies, some have treasures; only 1 room at a time (keep it on one screen)</li>
+<li>make battles tough, but give the option to run. Running means that you'll need to fight a stronger version of the enemy on the way back</li>
+<li>Items: swords (high dmg, low range), bows (low dmg, high range), armor, health potions; start with basic sword and bow</li>
+<li>Enemies: slimes (low range, high damage), archer skeleton (high range, low damage), goblin boss (high range, high damage)</li>
+<li>some tiles are trapped. Can be both positive and negative (hp restore, spike trap that does damage)</li>
+</ul>
+
+<p>This outline felt doable in the 48 competition time frame. So how did it go?</p>
+
+<h3>What went right</h3>
+
+<ul>
+<li>The art style. The comments I have received so far have been very positive about the artwork. I had not decided on the art style until around the end of the first day. At that point, I was feeling ready to start replacing the placeholder art. I had remembered a bullet point from the great <a href="https://www.youtube.com/watch?v=Fy0aCDmgnxg">Juice it or lose it</a> talk: add eyes to things. I added some eyes to the slime monster, and everything snowballed from there.</li>
+<li>The turn-based system came out to be what I had originally envisioned.</li>
+<li>I succeeded in creating the win goal. The progression worked well: fight your way to the last floor, get the treasure, fight your way back to the top. The fight back to the top spawns more enemies than on the way down for increased challenge.</li>
+<li>I believe I stuck to the theme well enough. Even though the player is moving through randomly generated rooms, all of them are ultimately the same rectangular room.</li>
+<li>Something that almost didn't make it in time were the rocks and crates that litter each room. They add a much needed variety to each level.</li>
+<li>Using the framework I had already created saved a lot of potential headaches (with a few exceptions I'll explain later).</li>
+<li>My work pace throughout the weekend was pretty much on point. Where this was my first Ludum Dare, I was worried I wouldn't have a functional game by the end.</li>
+<li>The game's actually a little fun. Can't ask for much more than that.</li>
+</ul>
+
+<h3>What went wrong</h3>
+
+<ul>
+<li>While my framework saved me some time, there were a few bugs that popped up. Most notably was that my image reference counts were incorrect when used in animations. I actually needed to fix that one twice, since my initial fix wasn't complete. Fixing those bugs ate more time than I should have spent on such things.</li>
+<li>The game is too easy, so there's no benefit to running. The game was initially way too difficult, but I over-corrected in the opposite direction. I simply didn't have enough time to play with balancing the combat numbers. However, it's possible that making the game easy was the right choice, since it meant more people could see the whole game. To me, that's better than the players dying a bunch and getting frustrated.</li>
+<li>No enemy variety. Although they have slightly randomized stats, it is just slimes for the whole game. That's only 1/3 of the enemy types I had originally planned.</li>
+<li>No bows. It would have been nice to have an alternative attack method, perhaps with finite ammunition.</li>
+<li>While not very important, there were no traps. That would have been something interesting for the player to encounter and would have added variety.</li>
+<li>I feel that having the player (and slimes) only move 1 tile per turn doesn't provide a lot of tactical options.</li>
+<li>I could only provide Linux and Windows builds. Although it should be relatively easy to build on Mac OS X, it would have been nice to be able to provide a pre-built package for those people. Something I'd like to do in the future (not for a game jam) is create a web version of the game, so anyone with a modern web browser could play. I've never done any HTML canvas and Javascript in the context of a game, so I'll probably be looking at Clint Bellanger's <a href="http://heroinedusk.com/">Heroine Dusk</a> as a way of learning.</li>
+<li>While not something that's important in the context of a game jam, some of my code's structure is a bit poor. I ended up putting a lot of the game's logic in the MapEngine class, where it didn't really belong. Sorting out that structure is something I want to do before working on a port to another language.</li>
+<li>During the process, I want to make it so that entities "tweened" when moving between positions, but my movement system made that too difficult to implement in a reasonable amount of time.</li>
+</ul>
+
+<p>So where do I go from here? I have a fun little game that's begging for some balancing and some more content. A lot of the things myself and others found to be problems with the game are simply results of having a limited amount of time. I think it's something that I want to continue working on, even though the jam is over. Maybe it will turn into something really cool one day.</p>
+<p><a href="blog_2014-12-09_10-02-52.html">Permalink</a></p>
+</div>
+<div class="blogpost">
 <h2>2014/10/10 14:53:17</h2>
 
 <p>The past month or so has been pretty good for Flare development. Many crashes, memory leaks, and bugs were reported and fixed. Many of the bugs revolved around poor handling of items, which was causing items to disappear in some cases. The crashes were mostly just us not respecting array bounds, and were introduced fairly recently. The memory leaks, on the other hand, turned out to be long-standing problems. Who knew that every instance of WidgetLabel (most places where there is text) was leaking memory?</p>
@@ -69,14 +122,6 @@
 
 <p><a href="images/botd_alpha.jpg"><img src="images/thumb_botd_alpha.jpg" alt="book of the dead alpha" title="" /></a></p>
 <p><a href="blog_2014-07-22_20-13-48.html">Permalink</a></p>
-</div>
-<div class="blogpost">
-<h2>2014/07/18 21:42:16</h2>
-
-<p>I mapped out the cave area for the coastal map I posted the other day. I personally like how the exit is visible near the entrance of the map. The lootable barrel teases the player a bit and makes them want to travel there.</p>
-
-<p><a href="images/coast_cave.jpg"><img src="images/thumb_coast_cave.jpg" alt="coast cave map alpha" title="" /></a></p>
-<p><a href="blog_2014-07-18_21-42-16.html">Permalink</a></p>
 </div>
 <p>
 <a href="blog_page1.html">Older entries</a>
