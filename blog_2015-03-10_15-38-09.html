@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>dorkster - 2015/03/10 15:38:09</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link href="main.css" rel="stylesheet" type="text/css" title="main"/>
+</head>
+
+<body>
+
+<h1>dorkster</h1>
+<ul class="navigation">
+    <li><a href="index.html">Blog</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="about.html">About</a></li>
+</ul>
+<hr/>
+
+<div class="content">
+
+<div class="blogpost">
+<h2>2015/03/10 15:38:09</h2>
+
+<p>Things have been interesting for the passed few weeks. The majority of my programming activity outside of FLARE boils down to personal pet projects. Sure, I distribute the source code under free licenses, but I never actually intend for other people to use any of my stuff.</p>
+
+<h3>Freeblocks</h3>
+
+<p><img src="images/freeblocks_v0.5.png" alt="Freeblocks v0.5" title="" /></p>
+
+<p><a href="https://github.com/dorkster/freeblocks">Freeblocks</a> is one of those projects. I hacked it together for the <strong>One Game A Month</strong> game jam in January of 2013. At the time, I had a little bit of game dev experience under my belt from my contributions on FLARE. Looking back, however, I can see that I was still very inexperienced. So as with most pet projects, I put it on the shelf and left it there.</p>
+
+<p>Fast-forward 2 years to February of this year, and I receive a pull request for a port to the <a href="http://www.gcw-zero.com/">GCW-Zero</a> by Github user cxong. The port was rough at first, but cxong and myself have spent the past month and a half improving the game. The improvements didn't stop at getting the GCW-Zero port working either. Some other milestones include a separate "jewels" game mode, control re-mapping support, and inclusion in the FreeBSD ports collection. At this time, <a href="https://github.com/dorkster/freeblocks/releases/tag/v0.5">version 0.5</a> is the current released version.</p>
+
+<h3>SpaceFM</h3>
+
+<p>Last June, I wanted to implement video thumbnails into the <a href="https://github.com/IgnorantGuru/spacefm">SpaceFM file manager</a>. So I <a href="http://dorkster.github.io/blog_2014-06-24_15-43-54.html">did just that</a>. However, IgnorantGuru had announced his hiatus a few months before, so it looked like SpaceFM would go unmaintained. I kept my changes on my own fork as a result. IgnorantGuru has since returned and contacted my about my video thumbnail code. I'm happy to say that it's upstream now and on it's way into SpaceFM 1.0!</p>
+
+<h3>Dunst</h3>
+
+<p><a href="https://github.com/knopwob/dunst">Dunst</a> is a super lightweight notification daemon I found. I started tinkering with it, since I wanted to add the ability to activate the default action by middle-clicking on a notification. In the process, I discovered a handful of memory leaks that I patched and got sent upstream. It's not much, but it still feels good to have more contributions in the <em>things-that-aren't-mine</em> bin.</p>
+
+<h3>FLARE</h3>
+
+<p>All this work on other projects has stolen some of my attention from FLARE recently. That isn't to say it's been completely neglected. On the engine side, a lot of small bugs have been fixed, including a <a href="https://github.com/clintbellanger/flare-engine/issues/1360">nasty crash</a> related to using both transformations and summons. In addition, Igor has put together the MapSaver API, which can be used in external programs that want to use FLARE's data structures for outputting maps. The <a href="https://github.com/Paul-Wortmann/Random_Map_Generator">Random Map Generator</a> is an example use of this. There are a few things I have on my mind that I want to implement before going to 1.0, but the engine is in a really good state now.</p>
+
+<p>As for the actual game part, development of the Empyrean campaign has been slow. I was last working on "area 2", which contains three maps: a swamp area, a graveyard, and a ruined town as the entrance to the first dungeon. I'm happy with the swamp map that I created (see below). However, the graveyard map is not looking good to me as of now. I need to spend more time experimenting with it.</p>
+
+<p><a href="images/merrimead_swamp.jpg"><img src="images/thumb_merrimead_swamp.jpg" alt="Merrimead Swamp" title="" /></a></p>
+
+<p>The Empyrean campaign is going to require some rethinking in terms of gameplay. Things like the types of powers available to the player, power cooldowns, the amount of stat points per level, etc. I've been brainstorming ideas about all of these, and I'll probably start experimenting once the maps for the first dungeon are complete. That will be a good vertical slice to test things with.</p>
+
+<p>When the engine and Empyrean campaign stuff starts coming together, I'd like to put together another FLARE developer log, since it's been quite a while since the last one. The reason I'm putting it off until more Empyrean stuff is complete is because I want some new stuff to show when demoing the engine features. Sure, I could show most things with the existing alpha_demo mod, but it's more exciting to see something new.</p>
+
+<p>Now I just need to pull myself away from maintaining Freeblocks and playing Torchlight II.</p>
+</div>
+
+</div>
+
+<hr/>
+<p>
+©2013-2014 Justin Jacobs.<br/>
+This page uses valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS 2.1</a> and <a href="http://validator.w3.org/check?uri=referer">XHTML 1.0 Strict</a>.
+</p>
+
+</body>
+
+</html>
