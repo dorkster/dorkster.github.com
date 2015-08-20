@@ -103,6 +103,10 @@ a:visited {
     overflow:auto;
 }
 
+.navigation ul {
+    margin: 0;
+}
+
 .navigation li {
     display: block;
     margin: 0;

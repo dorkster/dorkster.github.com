@@ -10,5 +10,6 @@
 
 <body>
 
-<ul class="navigation">
+<div class="navigation">
 <h1>dorkster</h1>
+<ul>
