@@ -33,6 +33,9 @@ for i in $(ls -1 blog/*.md | sort -r); do
     PAGETITLE=$(head -n 1 $i | cut -c 4- | sed -e 's/[\/&]/\\&/g')
     PAGEDESC="$(sed -n '3p' $i | sed -e 's/[\/&]/\\&/g' | \grep -P -o '.*?[\.\?\!]\s' | sed 1q | sed -e 's/\s$//g')"
     PAGEIMG="$(\grep -P -o 'images\/(.*?)\.(jpg|png)' $i | sed 1q | sed -e 's/[\/&]/\\&/g')"
+    if [ $PAGEIMG ]; then
+        PAGEIMG="http:\/\/dorkster.github.io\/$PAGEIMG"
+    fi
 
     # create a page for a single blog post (aka can be permalinked)
     HTMLFILE="blog_$(basename $i ".md").html"
@@ -80,6 +83,8 @@ for i in $(ls -1 blog/*.md | sort -r); do
             PAGENEXT="blog_page$PAGEINDEX.html"
 
             echo "Generating ../$PAGERFILE"
+            PAGEDESC=""
+            PAGEIMG=""
             cat html_template/header.txt | sed -e "s/PAGETITLE/Blog/g" -e "s/PAGEDESC/$PAGEDESC/g" -e "s/PAGEIMG/$PAGEIMG/g" > "../$PAGERFILE"
 
             # highlight the "Blog" link in nav
