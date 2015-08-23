@@ -3,7 +3,7 @@
 # this script generates Projects, About, etc.
 cd ~/Projects/dorkster.github.com/markdown/
 
-PAGEDESC=""
+PAGEDESC="My name is Justin, and I write free software (the libre kind)."
 PAGEIMG=""
 
 for i in *.md; do
