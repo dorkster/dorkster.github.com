@@ -3,15 +3,17 @@
 # this script generates Projects, About, etc.
 cd ~/Projects/dorkster.github.com/markdown/
 
-PAGEDESC="My name is Justin, and I write free software (the libre kind)."
+PAGEDESC=""
 PAGEIMG=""
 
 for i in *.md; do
     if [ "$i" == "index.md" ]; then
         PAGETITLE="Home"
+        PAGEDESC="$(sed -n '1p' $i | sed -e 's/[\/&]/\\&/g' | \grep -P -o '.*?[\.\?\!]\s' | sed 1q | sed -e 's/\s$//g')"
     else
         # this assumes that pages start with "## PAGETITLE"
         PAGETITLE=$(head -n 1 $i | cut -c 4- | sed -e 's/[\/&]/\\&/g')
+        PAGEDESC="$(sed -n '3p' $i | sed -e 's/[\/&]/\\&/g' | \grep -P -o '.*?[\.\?\!]\s' | sed 1q | sed -e 's/\s$//g')"
     fi
 
     HTMLFILE="$(basename $i ".md").html"
