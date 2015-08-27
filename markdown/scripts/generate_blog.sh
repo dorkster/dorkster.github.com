@@ -32,6 +32,10 @@ for i in $(ls -1 blog/*.md | sort -r); do
     # this assumes that pages start with "## PAGETITLE"
     PAGETITLE=$(head -n 1 $i | cut -c 4- | sed -e 's/[\/&]/\\&/g')
     PAGEDESC="$(sed -n '3p' $i | sed -e 's/[\/&]/\\&/g' | \grep -P -o '.*?[\.\?\!]\s' | sed 1q | sed -e 's/\s$//g')"
+    if [ -z "$PAGEDESC" ]; then
+        PAGEDESC="$(sed -n '3p' $i | sed -e 's/[\/&]/\\&/g' | \grep -P -o '.*?[\.\?\!]' | sed 1q)"
+        if [ "$PAGEDESC" == "!" ];then PAGEDESC="";fi
+    fi
     PAGEIMG="$(\grep -P -o 'images\/(.*?)\.(jpg|png)' $i | sed 1q | sed -e 's/[\/&]/\\&/g')"
     if [ $PAGEIMG ]; then
         PAGEIMG="http:\/\/dorkster.github.io\/$PAGEIMG"
