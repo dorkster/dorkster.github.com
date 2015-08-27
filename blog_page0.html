@@ -20,17 +20,37 @@
 <ul>
 <li><a href="index.html">Home</a></li>
 <li><a class="current" href="blog_page0.html">Blog</a></li>
+<li><a href="blog_2015-08-27_23-04-11.html">2015/08/27 23:04:11</a></li>
 <li><a href="blog_2015-08-23_22-34-37.html">2015/08/23 22:34:37</a></li>
 <li><a href="blog_2015-08-19_16-25-12.html">2015/08/19 16:25:12</a></li>
 <li><a href="blog_2015-03-10_15-38-09.html">2015/03/10 15:38:09</a></li>
 <li><a href="blog_2014-12-09_10-02-52.html">2014/12/09 10:02:52</a></li>
-<li><a href="blog_2014-10-10_14-53-17.html">2014/10/10 14:53:17</a></li>
 </ul>
 </div>
 
 <div class="content">
 <hr class="header-hr"/>
 
+<div class="blogpost">
+<h2>2015/08/27 23:04:11</h2>
+
+<p>Today, I implemented, what I think, is a useful feature into Flare.</p>
+
+<p>Previously, there were instances where the player could pick up just one item in an inventory stack (like when shift-clicking). In fact, all item movement on touchscreen/mouse-less devices was done that way. This was unacceptable for large stacks, such as those for Gold. My solution was to create a dialog menu to let the player decide how much they want to pick up.</p>
+
+<p><img src="images/flare_quantity_picker.jpg" alt="Screenshot of Flare's quantity picker dialog" title="" /></p>
+
+<p>The implementation of this was a bit tricky. Flare's drag-and-drop system worked under the assumption that it was literally that: <em>DRAG</em> and drop. Clicking on items immediately removed them from their source slot, and there was no way to maintain what was being dragged if the player let off the mouse button. So as a result, I needed to make sure:</p>
+
+<ul>
+<li>The stack isn't picked up when shift-clicking on an item stack</li>
+<li>The item stack and source id are still stored in our dragging variables, but not displayed visually</li>
+<li>When the player clicks "OK" on the dialog box, the desired quantity is removed from the source slot</li>
+</ul>
+
+<p>I'm satisfied with the end result, although the dialog menu itself may get some usability tweaks. For example, the text field with the value could be editable by keyboard. Also, the rate at which the arrows increment/decrement the value might need some adjusting.</p>
+<p><a href="blog_2015-08-27_23-04-11.html">Permalink</a></p>
+</div>
 <div class="blogpost">
 <h2>2015/08/23 22:34:37</h2>
 
@@ -152,22 +172,6 @@
 
 <p>So where do I go from here? I have a fun little game that's begging for some balancing and some more content. A lot of the things myself and others found to be problems with the game are simply results of having a limited amount of time. I think it's something that I want to continue working on, even though the jam is over. Maybe it will turn into something really cool one day.</p>
 <p><a href="blog_2014-12-09_10-02-52.html">Permalink</a></p>
-</div>
-<div class="blogpost">
-<h2>2014/10/10 14:53:17</h2>
-
-<p>The past month or so has been pretty good for Flare development. Many crashes, memory leaks, and bugs were reported and fixed. Many of the bugs revolved around poor handling of items, which was causing items to disappear in some cases. The crashes were mostly just us not respecting array bounds, and were introduced fairly recently. The memory leaks, on the other hand, turned out to be long-standing problems. Who knew that every instance of WidgetLabel (most places where there is text) was leaking memory?</p>
-
-<p>The other major memory leak was known for a long time, so I feel like going into a bit of detail. Map events have the ability to cast powers (e.g. the trapped chests in the Brothers' Lair). In order to cast these powers, we were creating a StatBlock that was attached to the event. The problem was that the event could be deleted while the power was still active, resulting in the StatBlock leaking. The solution was to determine ahead of time which events will need StatBlocks, and allocate them in an array attached to the Map class itself.</p>
-
-<p>It hasn't all been scrambling to fix stuff, though. We've also had time to work on some new features. The loot system got a bit of reworking, so it is now possible to define loot tables in separate files instead of having to define loot inline. This is handy because we can re-use loot tables in multiple places. The best part is that we can mix these loot files with inline loot definitions to add lots of variety.</p>
-
-<p>Also related to loot, we've added the ability for powers to drop loot. One of the more interesting ideas that was tossed around was the idea of a thief class that can punch the gold out of enemies. Clint also pointed out that powers that require an item and drop a different item is a simple version of crafting.</p>
-
-<p>Igor has been very helpful in continuing work on the Android port. A lot of the work here involved re-thinking input to work with touchscreens. Many things we take for granted when using a mouse, like hovering over icons to see tooltips, had to be changed. Our solution for that case was to display tooltips on the first tap, followed by the regular "left-click" action on the second tap. During this whole process, we were even able to improve some things on the mouse/keyboard side of things, like <a href="http://a.pomf.se/ultkao.webm">being able to pick a target for some powers after activating from the action bar</a>.</p>
-
-<p>Finally, we merged the SDL hardware renderer from flare-engine-next into upstream flare-engine. Aside from <a href="https://github.com/dorkster/flare-engine-next/issues/5#issuecomment-58497417">one minor issue</a>, it looks identical to the software renderer. Of course, it is much faster than the software renderer because GPUs are just better equipped for handling graphics (go figure). Since this feature is upstream now, <strong>I hard reset the flare-engine-next repo to upstream</strong>, so please update your forks and local clones appropriately.</p>
-<p><a href="blog_2014-10-10_14-53-17.html">Permalink</a></p>
 </div>
 <p>
 <a href="blog_page1.html">Older entries</a>
