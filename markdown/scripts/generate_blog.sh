@@ -109,3 +109,5 @@ done
 
 cat html_template/footer.txt >> "../$PAGERFILE"
 
+cd ~/Projects/dorkster.github.com/markdown/scripts/
+./generate_blog_archive.sh

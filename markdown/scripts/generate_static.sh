@@ -8,7 +8,7 @@ PAGEIMG=""
 
 for i in *.md; do
     if [ "$i" == "index.md" ]; then
-        PAGETITLE="Home"
+        PAGETITLE="About"
         PAGEDESC="$(sed -n '1p' $i | sed -e 's/[\/&]/\\&/g' | \grep -P -o '.*?[\.\?\!]\s' | sed 1q | sed -e 's/\s$//g')"
         if [ -z "$PAGEDESC" ]; then
             PAGEDESC="$(sed -n '1p' $i | sed -e 's/[\/&]/\\&/g' | \grep -P -o '.*?[\.\?\!]' | sed 1q | sed -e 's/\s$//g')"
