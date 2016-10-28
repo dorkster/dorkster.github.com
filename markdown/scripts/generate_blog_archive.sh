@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# this script generates the pagers for blog articles, as well as the blog articles themselves
+# this script generates a page with a list of all the blog articles
 cd ~/Projects/dorkster.github.com/markdown/
 
 HTMLFILE="blog_archive.html"
@@ -19,6 +19,7 @@ fi
 
 echo "<div class=\"static\">" >> "../$HTMLFILE"
 echo "<h2>Blog Archive</h2>" >> "../$HTMLFILE"
+echo "<p>An <a href=\"blog.rss\">RSS feed</a> of the blog is also available.</p>" >> "../$HTMLFILE"
 echo "<ul>" >> "../$HTMLFILE"
 
 for i in $(ls -1 blog/*.md | sort -r); do
