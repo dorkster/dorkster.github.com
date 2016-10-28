@@ -28,6 +28,18 @@
 <hr class="header-hr"/>
 
 <div class="blogpost">
+<h2>2016/10/28 18:24:13</h2>
+
+<p>I took a break from <a href="http://flarerpg.org/blog/20161016">working on Flare</a> to spend some time on an old project of mine, <a href="https://github.com/dorkster/feedreader">feedreader</a>. My goal was to create a GUI configuration screen to make it easier to set up. It was a great exercise in creating something with GTK, as I've only really done stuff with tray status icons. Here's a look at the result as of now:</p>
+
+<p><img src="images/feedreader_prefs.png" alt="feedreader Preferences window" title="" /></p>
+
+<p>This is great for people who don't like mucking about with text file configuration. However, I should probably think about adding some buttons to change the order of appearance of the feeds.</p>
+
+<p>I also worked on a <a href="https://github.com/dorkster/keylock-tray">small app</a> to show the status of Caps/Num lock keys in the system tray. I needed this because my new laptop doesn't have LEDs for these states, which I think is kind of crazy.</p>
+<p><a href="blog_2016-10-28_18-24-13.html">Permalink</a></p>
+</div>
+<div class="blogpost">
 <h2>2015/12/29 21:42:55</h2>
 
 <p>News from the <a href="http://flarerpg.org">Flare</a> project has been sparse, if not silent. So I'd like to take this opportunity to discuss what we've been working on to those who may not be closely following development on Github. The features and fixes I'll discuss have been implemented since the last <a href="https://www.youtube.com/watch?v=F2dM-i44o78">developer log video</a>.</p>
@@ -146,29 +158,6 @@
 
 <p>The center area is vertically symmetrical, and the outer ring is horizontally symmetrical. Both combined create a shape that I really like. From a gameplay perspective, the player will travel clockwise around the outer ring. At 3 o'clock, there will be a mini-boss defending some treasure chests. One of the chests will contain a key that will unlock the door to the next level in the center area.</p>
 <p><a href="blog_2015-08-23_22-34-37.html">Permalink</a></p>
-</div>
-<div class="blogpost">
-<h2>2015/08/19 16:25:12</h2>
-
-<p>I made some changes to this site today, mostly related to the navigation. In my <a href="blog_2014-06-24_03-36-44.html">first blog post</a> I described the system of Markdown + bash scripts that I use to generate the pages here. I've made it so that the navigation now gets automatically populated with all static pages, the main blog page, and the last five blog entries. The navigation is applied to each page in the following way:</p>
-
-<ol>
-<li>Start with the first half of the header template</li>
-<li>Generate the list of links for the navigation</li>
-<li>Use sed to find the first line containing the current page's filename (i.e. the link to the current page in the navigation)</li>
-<li>Use that line number with sed to insert a <em>class</em> attribute to the link. This allows giving the link current page its own background color in the navigation</li>
-<li>Append the second half of the header, the page contents, and the footer (in that order)</li>
-</ol>
-
-<p>Points 3 and 4 are pretty neat in my opinion. The only options to get this effect would be to either:</p>
-
-<ul>
-<li>Use unique CSS classes for each page. Not ideal for how I'm generating pages.</li>
-<li>Or use Javascript. This is a Javascript-free site, so that's a no-go.</li>
-</ul>
-
-<p>In other news, Flare engine is at a state I'm happy calling version 1.0. The primary task now is to work on the Empyrean campaign, which is the replacement for the alpha demo game the was bundled with version 0.19. Development of the Empyrean campaign has been slow. While part of this is due to my own laziness, a good portion of the blame lies in the fact that game design is hard. Most of the gameplay values (stats, items) from the alpha demo have been thrown out. Getting things reasonably balanced is a tall order, and I feel like I'm just now getting close to a fair level of difficulty after much iteration. While I've been steadily developing maps to test content on, I look forward to going full speed into map and quest creation.</p>
-<p><a href="blog_2015-08-19_16-25-12.html">Permalink</a></p>
 </div>
 <p>
 <a href="blog_page1.html">Older entries</a>
