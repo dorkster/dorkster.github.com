@@ -191,10 +191,6 @@ a:visited {
 }
 
 @media only screen and (max-device-width: 480px) {
-    body {
-        font-size: 300%;
-    }
-
     .navigation a {
         display: block;
         padding: 0.5em;
