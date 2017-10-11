@@ -2,7 +2,13 @@ My name is Justin, and I write free software (the libre kind). I generally stick
 
 If you want to get in touch with me, you can via the following links:
 
-[Github](http://github.com/dorkster) | [itch.io](https://dorkster.itch.io/) | [Twitter](http://twitter.com/jajdorkster) | [Youtube](http://youtube.com/user/jajdorkster) | [Reddit](http://reddit.com/user/dorksterr) | [OpenGameArt](http://opengameart.org/users/dorkster) | [Email](mailto:jajdorkster@gmail.com)
+- [Github](http://github.com/dorkster)
+- [itch.io](https://dorkster.itch.io/)
+- [Twitter](http://twitter.com/jajdorkster)
+- [Youtube](http://youtube.com/user/jajdorkster)
+- [Reddit](http://reddit.com/user/dorksterr)
+- [OpenGameArt](http://opengameart.org/users/dorkster)
+- [Email](mailto:jajdorkster@gmail.com)
 
 ## Projects
 
