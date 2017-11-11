@@ -6,7 +6,6 @@ If you want to get in touch with me, you can via the following links:
 - [itch.io](https://dorkster.itch.io/)
 - [Twitter](http://twitter.com/jajdorkster)
 - [Youtube](http://youtube.com/user/jajdorkster)
-- [Reddit](http://reddit.com/user/dorksterr)
 - [OpenGameArt](http://opengameart.org/users/dorkster)
 - [Email](mailto:jajdorkster@gmail.com)
 
