@@ -30,24 +30,26 @@
 <div class="blogpost">
 <h2>2015/08/19 16:25:12</h2>
 
-<p>I made some changes to this site today, mostly related to the navigation. In my <a href="blog_2014-06-24_03-36-44.html">first blog post</a> I described the system of Markdown + bash scripts that I use to generate the pages here. I've made it so that the navigation now gets automatically populated with all static pages, the main blog page, and the last five blog entries. The navigation is applied to each page in the following way:</p>
+<p>I made some changes to this site today, mostly related to the navigation. In my <a href="blog_2014-06-24_03-36-44.html">first blog post</a> I described the system of Markdown + bash scripts that I use to generate the pages here. I&rsquo;ve made it so that the navigation now gets automatically populated with all static pages, the main blog page, and the last five blog entries. The navigation is applied to each page in the following way:</p>
 
 <ol>
 <li>Start with the first half of the header template</li>
 <li>Generate the list of links for the navigation</li>
-<li>Use sed to find the first line containing the current page's filename (i.e. the link to the current page in the navigation)</li>
+<li>Use sed to find the first line containing the current page&rsquo;s filename (i.e. the link to the current page in the navigation)</li>
 <li>Use that line number with sed to insert a <em>class</em> attribute to the link. This allows giving the link current page its own background color in the navigation</li>
 <li>Append the second half of the header, the page contents, and the footer (in that order)</li>
 </ol>
 
+
 <p>Points 3 and 4 are pretty neat in my opinion. The only options to get this effect would be to either:</p>
 
 <ul>
-<li>Use unique CSS classes for each page. Not ideal for how I'm generating pages.</li>
-<li>Or use Javascript. This is a Javascript-free site, so that's a no-go.</li>
+<li>Use unique CSS classes for each page. Not ideal for how I&rsquo;m generating pages.</li>
+<li>Or use Javascript. This is a Javascript-free site, so that&rsquo;s a no-go.</li>
 </ul>
 
-<p>In other news, Flare engine is at a state I'm happy calling version 1.0. The primary task now is to work on the Empyrean campaign, which is the replacement for the alpha demo game the was bundled with version 0.19. Development of the Empyrean campaign has been slow. While part of this is due to my own laziness, a good portion of the blame lies in the fact that game design is hard. Most of the gameplay values (stats, items) from the alpha demo have been thrown out. Getting things reasonably balanced is a tall order, and I feel like I'm just now getting close to a fair level of difficulty after much iteration. While I've been steadily developing maps to test content on, I look forward to going full speed into map and quest creation.</p>
+
+<p>In other news, Flare engine is at a state I&rsquo;m happy calling version 1.0. The primary task now is to work on the Empyrean campaign, which is the replacement for the alpha demo game the was bundled with version 0.19. Development of the Empyrean campaign has been slow. While part of this is due to my own laziness, a good portion of the blame lies in the fact that game design is hard. Most of the gameplay values (stats, items) from the alpha demo have been thrown out. Getting things reasonably balanced is a tall order, and I feel like I&rsquo;m just now getting close to a fair level of difficulty after much iteration. While I&rsquo;ve been steadily developing maps to test content on, I look forward to going full speed into map and quest creation.</p>
 </div>
 
 </div>
@@ -55,7 +57,7 @@
 <div class="footer">
 <hr/>
 <p>
-©2013-2016 Justin Jacobs.<br/>
+©2013-2018 Justin Jacobs.<br/>
 This page uses valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS 3</a> and <a href="http://validator.w3.org/check?uri=referer">XHTML 1.0 Strict</a>.
 </p>
 </div>

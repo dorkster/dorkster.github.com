@@ -30,7 +30,7 @@
 <div class="blogpost">
 <h2>2014/07/06 20:06:33</h2>
 
-<p>One week later, I've finished all the tasks I had set out to complete on Flare. I'm very happy with the removal of the --game flag, since I feared that would cause a lot of cases where people couldn't launch their game.</p>
+<p>One week later, I&rsquo;ve finished all the tasks I had set out to complete on Flare. I&rsquo;m very happy with the removal of the &ndash;game flag, since I feared that would cause a lot of cases where people couldn&rsquo;t launch their game.</p>
 
 <p>I was also able to take care of all the critical TODOs, FIXMEs, and static analysis related bugs. The engine is pretty solid, so I forsee us moving into the feature freeze/bug testing and translation stages soon.</p>
 <p><a href="blog_2014-07-06_20-06-33.html">Permalink</a></p>
@@ -38,19 +38,20 @@
 <div class="blogpost">
 <h2>2014/06/29 22:18:33</h2>
 
-<p>Flare is close to version 1.0 now (probably the billionth time I've said that). This week, I plan to tackle a big chunk of what's left for engine work. My game-plan is as follows:</p>
+<p>Flare is close to version 1.0 now (probably the billionth time I&rsquo;ve said that). This week, I plan to tackle a big chunk of what&rsquo;s left for engine work. My game-plan is as follows:</p>
 
 <ul>
-<li>Remove the <strong>--game</strong> command line flag. It's functionality will be replaced in the form of a mod setting as outlined <a href="https://github.com/clintbellanger/flare-engine/issues/1111">here</a>.</li>
+<li>Remove the <strong>&ndash;game</strong> command line flag. It&rsquo;s functionality will be replaced in the form of a mod setting as outlined <a href="https://github.com/clintbellanger/flare-engine/issues/1111">here</a>.</li>
 <li>Scan over all TODOs and FIXMEs across the code base and attempt to eliminate as many as possible.</li>
 <li>Fix possible bugs detected by Coverity Scan</li>
 </ul>
+
 <p><a href="blog_2014-06-29_22-18-33.html">Permalink</a></p>
 </div>
 <div class="blogpost">
 <h2>2014/06/26 23:51:01</h2>
 
-<p><img src="images/flare_joystick_keybinds.png" alt="flare joystick keybinds" title="" /></p>
+<p><a href="images/flare_joystick_keybinds.png"><img src="images/thumb_flare_joystick_keybinds.jpg" alt="flare joystick keybinds" /></a></p>
 
 <p>Today, I fixed up a <a href="https://github.com/clintbellanger/flare-engine/pull/1107">few last things</a> pertaining to joystick support. These changes make it possible to change joystick button bindings via the configuration menu, as well as unbind keys completely.</p>
 
@@ -60,29 +61,30 @@
 <div class="blogpost">
 <h2>2014/06/24 15:43:54</h2>
 
-<p><img src="images/spacefm_videothumbs.png" alt="screenshot of SpaceFM using ffmpegthumbnailer" title="" /></p>
+<p><a href="images/spacefm_videothumbs.png"><img src="images/thumb_spacefm_videothumbs.jpg" alt="screenshot of SpaceFM using ffmpegthumbnailer" /></a></p>
 
-<p>About 2 weeks ago, I wrote a patch for <a href="http://ignorantguru.github.io/spacefm/">SpaceFM</a> that adds support for video thumbnails. It was something that I wanted for a while now, and it was already an open issue on SpaceFM's bug tracker.</p>
+<p>About 2 weeks ago, I wrote a patch for <a href="http://ignorantguru.github.io/spacefm/">SpaceFM</a> that adds support for video thumbnails. It was something that I wanted for a while now, and it was already an open issue on SpaceFM&rsquo;s bug tracker.</p>
 
 <p>Thanks to <a href="https://code.google.com/p/ffmpegthumbnailer/">ffmpegthumbnailer</a>, implementing the feature was pretty easy. All I had to do was add some code to determine if a file is a video, and add the relavant ffmpegthumbnailer bits to the existing thumbnailing code. Although, I got a bit tripped up when I forgot about the filesize limit that SpaceFM uses for thumbnails (maximum of 32MB). Since most videos are over 32MB, thumbnail generation was being skipped. After disabling the filesize limit for video files when thumbnailing, everything just worked.</p>
 
-<p>I haven't submitted a pull request to the SpaceFM project yet, because my code makes ffmpegthumbnailer a required dependency of SpaceFM. Ideally, having video thumbnail support should be optional at compile time, but I've been too lazy to set that up properly. If you want to try the patch for yourself, pull in <a href="https://github.com/dorkster/spacefm/tree/video-thumbnails">my branch</a>.</p>
+<p>I haven&rsquo;t submitted a pull request to the SpaceFM project yet, because my code makes ffmpegthumbnailer a required dependency of SpaceFM. Ideally, having video thumbnail support should be optional at compile time, but I&rsquo;ve been too lazy to set that up properly. If you want to try the patch for yourself, pull in <a href="https://github.com/dorkster/spacefm/tree/video-thumbnails">my branch</a>.</p>
 <p><a href="blog_2014-06-24_15-43-54.html">Permalink</a></p>
 </div>
 <div class="blogpost">
 <h2>2014/06/24 03:36:44</h2>
 
-<p>So, I've been wanting to put up some sort of blog here for a while now. Since this is hosted on Github, a static blog was appropriate. There's plenty of static blog generators out there (Jekyll probably being the most popular), but none of them appealed to me. Most of them are written in a slow, interpreted language like Ruby, or they are overkill for my needs.</p>
+<p>So, I&rsquo;ve been wanting to put up some sort of blog here for a while now. Since this is hosted on Github, a static blog was appropriate. There&rsquo;s plenty of static blog generators out there (Jekyll probably being the most popular), but none of them appealed to me. Most of them are written in a slow, interpreted language like Ruby, or they are overkill for my needs.</p>
 
 <p>Since *nix systems are already great at text processing, I decided to just roll my own using Markdown and some Bash scripts. What I came up with consists of three scripts:</p>
 
 <ol>
 <li><a href="markdown/scripts/generate_static.sh">A script to generate non-blog pages</a></li>
 <li><a href="markdown/scripts/generate_blog.sh">A script to generate blog pages</a></li>
-<li>A script to create a new blog post; aliased to "blog" in my shell</li>
+<li>A script to create a new blog post; aliased to &ldquo;blog&rdquo; in my shell</li>
 </ol>
 
-<p>(No link to script #3, so I'll show it here):</p>
+
+<p>(No link to script #3, so I&rsquo;ll show it here):</p>
 
 <pre><code>#!/bin/bash
 
@@ -116,7 +118,7 @@ fi
 <div class="footer">
 <hr/>
 <p>
-©2013-2016 Justin Jacobs.<br/>
+©2013-2018 Justin Jacobs.<br/>
 This page uses valid <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS 3</a> and <a href="http://validator.w3.org/check?uri=referer">XHTML 1.0 Strict</a>.
 </p>
 </div>
