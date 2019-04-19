@@ -5,6 +5,7 @@
 <head>
 <title>dorkster</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link href="https://fonts.googleapis.com/css?family=Coda" rel="stylesheet"/>
 <link href="main.css" rel="stylesheet" type="text/css" title="main"/>
 </head>
 
@@ -14,132 +15,92 @@
 
 <hr/>
 
-<table>
-<tr>
-<td width="60%">
-My name is Justin, and I write free software (the libre kind). I generally stick to game development, but I&rsquo;ve contributed a little to some non-game projects as well. Besides video games, my interests include:
-<br/>
-<ul>
-<li>Japanese anime and manga. My two stand-out favorite series are <i>Hidamari Sketch</i> and <i>Outlaw Star</i>.</li>
-<li>Late 80s/early 90s Lego, namely the Town, Space, and Castle themes.</li>
-<li>Arduino and hobby electronics in general. I'm new to this, so there's much for me to learn.</li>
-</ul>
-<br/>
-If you wish to contact me, you can do so via <a href="mailto:jajdorkster@gmail.com">email</a>.
-</td>
-<td>
-You can also find me on:<br/>
-<ul>
-<li><a href="http://github.com/dorkster">Github</a></li>
-<li><a href="https://dorkster.itch.io/">itch.io</a></li>
-<li><a href="http://twitter.com/jajdorkster">Twitter</a></li>
-<li><a href="http://youtube.com/user/jajdorkster">Youtube</a></li>
-<li><a href="http://opengameart.org/users/dorkster">OpenGameArt</a></li>
-</ul>
-</td>
-</tr>
-</table>
+<div class="about">
+        My name is Justin, and I write free software (the libre kind). I generally stick to game development, but I&rsquo;ve contributed a little to some non-game projects as well. Besides video games, my interests include:
+        <br/>
+        <ul>
+        <li>Japanese anime and manga. My two stand-out favorite series are <i>Hidamari Sketch</i> and <i>Outlaw Star</i>.</li>
+        <li>Late 80s/early 90s Lego, namely the Town, Space, and Castle themes.</li>
+        <li>Arduino and hobby electronics in general. I'm new to this, so there's much for me to learn.</li>
+        </ul>
+        <br/>
+        If you wish to contact me, you can do so via <a href="mailto:jajdorkster@gmail.com">email</a>.<br/><br/>
+        You can also find me on:<br/>
+        <ul class="about-links">
+        <li><a href="http://github.com/dorkster">Github</a></li>
+        <li><a href="https://dorkster.itch.io/">itch.io</a></li>
+        <li><a href="http://twitter.com/jajdorkster">Twitter</a></li>
+        <li><a href="http://youtube.com/user/jajdorkster">Youtube</a></li>
+        <li><a href="http://opengameart.org/users/dorkster">OpenGameArt</a></li>
+        </ul>
+</div>
 
 <h2>Projects</h2>
 
 <p><i>(To see a full list of things I&rsquo;ve hacked on, check out my <a href="https://github.com/dorkster?tab=repositories">Github profile</a>)</i></p>
 
-<table>
-<tr>
-<th colspan="2">Games</th>
-</tr>
+<div class="project-grid">
+    <div class="project-grid-item">
+        <img src="images/projects/flare.jpg"/>
+        <a href="http://flarerpg.org/">Flare</a><br/>
+        <span class="project-category">Game</span><br/>
+        Clint Bellanger&rsquo;s Flare is a fantastic free-software action RPG, similar to the Diablo series. I&rsquo;ve been helping with development since March of 2012 and have since become the lead developer.
+    </div>
+    <div class="project-grid-item">
+        <img src="images/projects/freeblocks.jpg"/>
+        <a href="https://github.com/dorkster/freeblocks">Freeblocks</a><br/>
+        <span class="project-category">Game</span><br/>
+        Created as my January 2013 OneGameAMonth project, Freeblocks is a game similar to Tetris Attack. While not a direct clone, it&rsquo;s still quite fun to play.
+    </div>
+    <div class="project-grid-item">
+        <img src="images/projects/nomans_dungeon.jpg"/>
+        <a href="http://ludumdare.com/compo/ludum-dare-31/?action=preview&amp;uid=44489">Noman&rsquo;s Dungeon</a><br/>
+        <span class="project-category">Game</span><br/>
+        This is a turn-based, rogue-like created for Ludum Dare #31. The goal is to travel to the last floor, retrieve the elusive trophy, and return to the surface. After the game jam was finished, <a href="nomans_dungeon.html">I wrote about the process and the end result</a>.
+    </div>
+    <div class="project-grid-item">
+        <a href="https://github.com/dorkster/feedreader">feedreader</a><br/>
+        <span class="project-category">Utility</span><br/>
+        A simple GTK2-based RSS reader that sits in the system tray. It displays a simple list of articles per feed, each of which can be opened in a web browser. I don&rsquo;t personally use this anymore, but it was my first experience making something with GTK2.
+    </div>
+    <div class="project-grid-item">
+        <a href="https://github.com/dorkster/keylock-tray">keylock-tray</a><br/>
+        <span class="project-category">Utility</span><br/>
+        My current laptop doesn't have LEDs for CapsLock and NumLock, so I created a program that displays their status as tray icons. It uses GTK2 and XKB and features command line flags to change the background/foreground colors of the icons.
+    </div>
+</div>
 
-<tr>
-<td width="20%">
-<a href="http://flarerpg.org/">Flare</a>
-</td>
-<td>
-Clint Bellanger&rsquo;s Flare is a fantastic free-software action RPG, similar to the Diablo series. I&rsquo;ve been helping with development since March of 2012 and have since become the lead developer.
-</td>
-</tr>
+<h2>Other Contributions</h2>
 
-<tr>
-<td>
-<a href="https://github.com/dorkster/freeblocks">Freeblocks</a>
-</td>
-<td>
-Created as my January 2013 OneGameAMonth project, Freeblocks is a game similar to Tetris Attack. While not a direct clone, it&rsquo;s still quite fun to play.
-</td>
-</tr>
+<div class="project-grid">
+    <div class="project-grid-item">
+        <a href="https://cxong.github.io/cdogs-sdl/">cdogs-sdl</a><br/>
+        <ul>
+            <li>Assist with port to Emscripten</li>
+        </ul>
+    </div>
+    <div class="project-grid-item">
+        <a href="https://www.retroarch.com/">RetroArch</a><br/>
+        <ul>
+            <li>Added ability to delete cores via the UI.</li>
+        </ul>
+    </div>
+    <div class="project-grid-item">
+        <a href="https://ignorantguru.github.io/spacefm/">spacefm</a><br/>
+        <ul>
+            <li>Added support for video thumbnails with ffmpegthumbnailer.</li>
+        </ul>
+    </div>
+    <div class="project-grid-item">
+        <a href="https://www.mapeditor.org/">Tiled</a><br/>
+        <ul>
+            <li>Updates to the Flare plugin.</li>
+            <li>Improved tab closing functionality.</li>
+            <li>Added ability to reorder terrains.</li>
+        </ul>
+    </div>
+</div>
 
-<tr>
-<td>
-<a href="http://ludumdare.com/compo/ludum-dare-31/?action=preview&amp;uid=44489">Noman&rsquo;s Dungeon</a>
-</td>
-<td>
-This is a turn-based, rogue-like created for Ludum Dare #31. The goal is to travel to the last floor, retrieve the elusive trophy, and return to the surface. After the game jam was finished, <a href="nomans_dungeon.html">I wrote about the process and the end result</a>.
-</td>
-</tr>
-
-<tr>
-<th colspan="2">Utilities</th>
-</tr>
-
-<tr>
-<td>
-<a href="https://github.com/dorkster/feedreader">feedreader</a>
-</td>
-<td>
-A simple GTK2-based RSS reader that sits in the system tray. It displays a simple list of articles per feed, each of which can be opened in a web browser. I don&rsquo;t personally use this anymore, but it was my first experience making something with GTK2.
-</td>
-
-<tr>
-<td>
-<a href="https://github.com/dorkster/keylock-tray">keylock-tray</a>
-</td>
-<td>
-My current laptop doesn't have LEDs for CapsLock and NumLock, so I created a program that displays their status as tray icons. It uses GTK2 and XKB and features command line flags to change the background/foreground colors of the icons.
-</td>
-</tr>
-
-<tr>
-<th colspan="2">Other Contributions</th>
-</tr>
-
-<tr>
-<td>
-    <a href="https://cxong.github.io/cdogs-sdl/">cdogs-sdl</a>
-</td>
-<td>
-Assist with port to Emscripten.
-</td>
-</tr>
-
-<tr>
-<td>
-    <a href="https://www.retroarch.com/">RetroArch</a>
-</td>
-<td>
-Added ability to delete cores via the UI.
-</td>
-</tr>
-
-<tr>
-<td>
-    <a href="https://ignorantguru.github.io/spacefm/">spacefm</a>
-</td>
-<td>
-Added support for video thumbnails with ffmpegthumbnailer.
-</td>
-</tr>
-
-<tr>
-<td>
-    <a href="https://www.mapeditor.org/">Tiled</a>
-</td>
-<td>
-Updates to the Flare plugin.<br/>
-Improved tab closing functionality.<br/>
-Added ability to reorder terrains.<br/>
-</td>
-
-
-</table>
 </body>
 
 </html>
