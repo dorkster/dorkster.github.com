@@ -38,8 +38,9 @@ a:visited {
 }
 
 .about {
-    padding: 1em;
-    border: 1px solid #ccc;
+    padding-left: 1em;
+    padding-right: 1em;
+    border: 1px solid #5F663D55;
     background-color: rgba(0,0,0,0.05);
 }
 
@@ -48,6 +49,7 @@ a:visited {
     display: block;
     padding: 0;
     margin: 0;
+    margin-bottom: 1em;
 }
 
 .about-links li {
@@ -102,22 +104,43 @@ a:visited {
 
 .project-grid-item {
     background-color: rgba(0,0,0,0.05);
-    padding: 1em;
-    border: 1px solid #ccc;
+    border: 1px solid #5F663D55;
+    padding: 0.5em;
 }
 
 .project-grid-item img {
     display: block;
-    float: right;
-    padding-left: 1em;
-    padding-bottom: 1em;
-    max-width: 4em;
-    max-height: 4em;
+    width: 100%;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
 }
 
-.project-grid-item .project-category {
+.project-grid-item-category {
     font-size: 0.8em;
     font-weight: bold;
+}
+
+.project-grid-item-title {
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.flat-list {
+    margin: 0;
+    padding: 0;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 90%;
+}
+
+.flat-list li:first-child {
+    border-top: none;
+}
+
+.flat-list li {
+    list-style: none;
+    border-top: 1px solid #00000044;
+    padding: 0.4em;
 }
 
 @media	only screen and (-webkit-min-device-pixel-ratio: 1.3),
