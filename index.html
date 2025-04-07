@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link href="https://fonts.googleapis.com/css?family=Coda" rel="stylesheet"/>
 <link href="main.css" rel="stylesheet" type="text/css" title="main"/>
+<link rel="stylesheet" href="dist/mastodon-timeline.min.css" />
 </head>
 
 <body>
@@ -31,6 +32,34 @@
         </ul>
 </div>
 
+<div class="col-box">
+<div class="col-posts">
+<h2>Posts</h2>
+  <div class="dummy-wrapper-timeline">
+    <!-- Mastodon Timeline -->
+    <div id="mt-container" class="mt-container">
+      <div class="mt-body" role="feed">
+        <div class="mt-loading-spinner"></div>
+      </div>
+    </div>
+  </div>
+
+<!-- JavaScript -->
+<script src="dist/mastodon-timeline.umd.js"></script>
+<script>
+  const myTimeline = new MastodonTimeline.Init({
+    instanceUrl: "https://mastodon.social",
+    timelineType: "profile",
+    userId: "106432910529471414",
+    profileName: "@dorkster",
+    maxNbPostFetch: "5",
+    maxNbPostShow: "5",
+    hidePinnedPosts: "true",
+  });
+</script>
+</div>
+
+<div class="col-projects">
 <h2>Projects</h2>
 
 <p><i>(To see a full list of things I've hacked on, check out my <a href="https://github.com/dorkster?tab=repositories">Github profile</a>)</i></p>
@@ -114,6 +143,8 @@
     </div>
 </div>
 
+</div>
+</div>
 <h2 id="more-about">More About Me</h2>
 <div class="about">
     <h3>My interests / hobbies</h3>
