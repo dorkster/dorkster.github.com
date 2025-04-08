@@ -148,14 +148,31 @@ a:visited {
 }
 
 .col-posts {
-    min-width: 30rem;
+    min-width: 40rem;
 }
 
 .col-projects {
 }
 
+/* mastodon timeline */
 .dummy-wrapper-timeline {
     padding: 0 1rem;
+}
+.mt-container, .mt-container[data-theme=light] {
+    --mt-color-bg: rgba(0,0,0,0.05);
+    --mt-color-bg-hover: rgba(0,0,0,0.1);
+    --mt-color-line-gray: #5F663D55;
+    --mt-color-contrast-gray: #4B453688;
+    --mt-color-content-txt: #4B4536;
+    --mt-color-hashtag: rgba(95,102,61,0.2);
+    --mt-color-link: #5F663D;
+    --mt-color-error-txt: #8b0000;
+    --mt-color-btn-bg: rgba(95,102,61,0.2);
+    --mt-color-btn-bg-hover: rgba(95,102,61,0.1);
+    --mt-color-btn-txt: #4B4536;
+    --mt-color-backdrop: #00000090;
+    --mt-color-placeholder: #60698425;
+    border: 1px solid #5F663D55;
 }
 
 @media all and (max-width: 60rem) {
