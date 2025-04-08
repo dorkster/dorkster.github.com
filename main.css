@@ -198,4 +198,10 @@ a:visited {
         li {
             /* margin-left: 2em; */
         }
+        .col-box {
+            flex-wrap: wrap;
+        }
+        .col-posts {
+            min-width: 100%;
+        }
 	}
